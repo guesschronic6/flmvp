@@ -14,6 +14,7 @@ function createLoadingCargoForkliftData(): LoadingCargoForkliftData {
       dimensions: {
         height: 9,
         width: 75,
+        length: 40,
       },
     },
   };
@@ -55,6 +56,7 @@ function createDummyForkliftData(): ForkliftData {
       dimensions: {
         height: 5,
         width: 63,
+        length: 40,
       },
     },
     forklift: {

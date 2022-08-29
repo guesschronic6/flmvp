@@ -3,6 +3,7 @@ import {
   GeneralContextProvider,
   ForkliftDataContextProvider,
   MainPage,
+  ConfigContextProvider,
 } from "./components";
 import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material";
@@ -21,9 +22,11 @@ function App() {
           preventDuplicate
         >
           <GeneralContextProvider>
-            <ForkliftDataContextProvider>
-              <MainPage />
-            </ForkliftDataContextProvider>
+            <ConfigContextProvider>
+              <ForkliftDataContextProvider>
+                <MainPage />
+              </ForkliftDataContextProvider>
+            </ConfigContextProvider>
           </GeneralContextProvider>
         </SnackbarProvider>
       </ThemeProvider>

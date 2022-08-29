@@ -36,6 +36,7 @@ const ForkliftDataContextProvider: React.FunctionComponent<
       dimensions: {
         height: 9,
         width: 75,
+        length: 40,
       },
     },
   });

@@ -1,5 +1,12 @@
+export type Position = [x: number, y: number, z: number];
+export type Dimensions = {
+  height: number;
+  width: number;
+  length: number;
+};
+
 export type ForkData = {
-  position: [x: number, y: number, z: number];
+  position: Position;
   target: {
     distance: number;
     height: number;
@@ -38,6 +45,7 @@ export type ForkliftData = {
     dimensions: {
       height: number;
       width: number;
+      length: number;
     };
   };
 };
@@ -56,13 +64,103 @@ export type LoadingCargoForkliftData = {
     };
   };
   pallet: {
-    position: [x: number, y: number, z: number];
-    angle: number;
-    dimensions: {
-      height: number;
-      width: number;
+    position: Position;
+    angle: {
+      yaw: number;
+    };
+    dimensions: Dimensions;
+    holes: {
+      left: LoadingCargoPalletHolesData;
+      right: LoadingCargoPalletHolesData;
     };
   };
+};
+
+export type LoadingCargoPalletHolesData = {
+  position: Position;
+  dimensions: Dimensions;
+};
+
+export type ForkliftConfig = {
+  arm: {
+    length: number;
+    width: number;
+    thickness: number;
+  };
+  threshold: {
+    z: number;
+    x: number;
+    y: number;
+    angle: {
+      yaw: number;
+    };
+  };
+  offset: {
+    height?: number;
+    left_arm: {
+      x?: number;
+      y?: number;
+      z?: number;
+    };
+    right_arm: {
+      x?: number;
+      y?: number;
+      z?: number;
+    };
+    angle: {
+      pitch?: number;
+      yaw?: number;
+      roll?: number;
+    };
+  };
+};
+
+export type CameraConfig = {
+  height: number;
+  fov: {
+    x: number;
+    y: number;
+  };
+};
+
+export type PalletConfig = {
+  offset: {
+    x?: number;
+    y?: number;
+    z?: number;
+    hole: {
+      width?: number;
+      height?: number;
+      length?: number;
+    };
+  };
+};
+
+export type DropPointConfig = {
+  position: {
+    x?: number;
+    y?: number;
+    z?: number;
+  };
+};
+
+export type PalletBoundingBoxConfig = {
+  left?: number;
+  top?: number;
+  width: number;
+  height: number;
+  holes: {
+    left: PalletBoundingBoxHoleConfig;
+    right: PalletBoundingBoxHoleConfig;
+    width: number;
+  };
+};
+
+export type PalletBoundingBoxHoleConfig = {
+  top?: number;
+  left?: number;
+  height: number;
+  width: number;
 };
 
 export enum AppState {

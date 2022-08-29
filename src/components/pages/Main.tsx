@@ -10,7 +10,11 @@ import {
 import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, useGLTF } from "@react-three/drei";
 import { ForkLiftArms, PalletGuide } from "../three";
-import { useGeneralContext, useForkliftDataContext } from "../contexts";
+import {
+  useGeneralContext,
+  useForkliftDataContext,
+  useConfigContext,
+} from "../contexts";
 import { AppState } from "../../types";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
@@ -22,6 +26,7 @@ const MainPage: React.FunctionComponent<MainPageProps> = (props) => {
   const { forklift_data, is_clear, is_far, is_very_far } =
     useForkliftDataContext();
   const { appState } = useGeneralContext();
+  const {} = useConfigContext();
 
   const arrowModel = useLoader(GLTFLoader, "/arrow.glb");
 

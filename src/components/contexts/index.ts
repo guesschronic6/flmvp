@@ -9,12 +9,17 @@ import {
   ForkliftDataContextProvider,
 } from "./ForkliftDataContextProvider";
 import { useForkliftDataContext } from "./useForkliftDataContext";
+import { ConfigContextProvider, ConfigContext } from "./ConfigContextProvider";
+import { useConfigContext } from "./useConfigContext";
 
 export {
   GeneralContextProvider,
   GeneralContext,
-  useGeneralContext,
   ForkliftDataContext,
   ForkliftDataContextProvider,
+  ConfigContext,
+  ConfigContextProvider,
+  useGeneralContext,
   useForkliftDataContext,
+  useConfigContext,
 };
